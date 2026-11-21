@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050510;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* STAR BACKGROUND */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ffb6e6 1px, transparent 1px);
+
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 25px 25px;
+
+    animation: starMove 30s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes starMove {
+    from {
+        background-position: 0 0, 25px 25px;
+    }
+    to {
+        background-position: 500px 500px, 300px 300px;
+    }
+}
+
+/* FIREWORK CANVAS */
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* INTRO */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #291044, #050510);
+    text-align: center;
+    padding: 20px;
+}
+
+.intro-text {
+    letter-spacing: 5px;
+    color: #ffc6f2;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+#countdown {
+    font-size: 120px;
+    color: #ff4fd8;
+    text-shadow: 0 0 35px #ff00c8;
+    animation: countdownPulse 1s infinite;
+}
+
+@keyframes countdownPulse {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+button {
+    padding: 14px 25px;
+    border: 1px solid #ff69d4;
+    border-radius: 40px;
+    background: linear-gradient(45deg, #b5179e, #ff4fa3);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #ff33b8;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px #ff33b8;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* CELEBRATION */
+
+.celebration {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    min-height: 100vh;
+    padding: 45px 20px;
+    animation: reveal 2s ease;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.top-label {
+    color: #ffb8ed;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.birthday-title {
+    font-size: clamp(55px, 10vw, 120px);
+    line-height: 1;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 20px #ff00b7, 0 0 50px #8c00ff;
+    animation: titleGlow 2s infinite alternate;
+}
+
+.birthday-title span {
+    background: linear-gradient(
+        90deg,
+        #ff55c8,
+        #ffd700,
+        #ffffff,
+        #ff55c8
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientMove 4s infinite;
+}
+
+@keyframes gradientMove {
+    to {
+        background-position: 300%;
+    }
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 15px #ff00b7;
+    }
+    to {
+        text-shadow: 0 0 50px #ff00b7, 0 0 80px #8c00ff;
+    }
+}
+
+#personName {
+    font-size: clamp(25px, 5vw, 40px);
+    margin: 25px 0;
+    color: #ffe4f7;
+}
+
+/* PHOTO */
+
+.photo-frame {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 5px solid #ff75df;
+    box-shadow: 0 0 30px #ff00d4;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #a100ff, #ff52a5);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.subtitle {
+    color: #ffd4f5;
+    font-size: 18px;
+    margin: 20px;
+}
+
+/* BALLOONS */
+
+.balloons {
+    font-size: 40px;
+    margin: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+/* LETTER */
+
+.letter {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.letter-content {
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #fff0f8, #ffe0f1);
+    color: #5a1746;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px #ff49d5;
+    animation: letterOpen 0.7s ease;
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.letter-content h2 {
+    margin-bottom: 20px;
+    color: #c21886;
+}
+
+.letter-content p {
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+.letter-content h3 {
+    margin-top: 25px;
+    color: #d81b91;
+}
+
+.letter-content button {
+    background: #c21886;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #ffb7ec;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .celebration {
+        padding-top: 30px;
+    }
+
+    .photo-frame {
+        width: 180px;
+        height: 180px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .letter-content {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="fireworks"></canvas>
+
+    <div class="stars"></div>
+
+    <!-- INTRO COUNTDOWN -->
+    <div id="intro" class="intro">
+        <p class="intro-text">A SPECIAL MOMENT IS COMING...</p>
+        <h1 id="countdown">3</h1>
+        <button id="startBtn">START THE SURPRISE ✨</button>
+    </div>
+
+    <!-- MAIN CELEBRATION -->
+    <main id="celebration" class="celebration hidden">
+
+        <div class="top-label">A CELEBRATION OF YOU</div>
+
+        <h1 class="birthday-title">
+            HAPPY<br>
+            <span>BIRTHDAY!</span>
+        </h1>
+
+        <h2 id="personName">Someone Special ❤️</h2>
+
+        <div class="photo-frame">
+            <img src="photo.jpg" alt="Birthday person"
+                 onerror="this.style.display='none'">
+            <div class="photo-placeholder" id="photoPlaceholder">
+                🎂
+            </div>
+        </div>
+
+        <p class="subtitle">
+            Today is your day. Make it unforgettable.
+        </p>
+
+        <div class="balloons">
+            🎈 🥳 🎈 💖 🎈
+        </div>
+
+        <div class="buttons">
+            <button id="letterBtn">💌 Open Your Letter</button>
+            <button id="musicBtn">🎵 Play Music</button>
+        </div>
+
+        <!-- BIRTHDAY LETTER -->
+        <div id="letter" class="letter hidden">
+            <div class="letter-content">
+                <h2>Dear Birthday Star 💖</h2>
+
+                <p>
+                    Today is a beautiful reminder of how special you are.
+                    May your life be filled with happiness, peace,
+                    endless love and countless reasons to smile.
+                </p>
+
+                <p>
+                    May every dream you carry in your heart come true.
+                    May this new chapter bring you blessings,
+                    success and unforgettable memories.
+                </p>
+
+                <p>
+                    Keep shining, keep smiling and never stop being amazing.
+                </p>
+
+                <h3>Happy Birthday! 🎂✨</h3>
+
+                <button id="closeLetter">Close Letter</button>
+            </div>
+        </div>
+
+        <footer>
+            MADE WITH ❤️ JUST FOR YOU
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
